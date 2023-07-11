@@ -1,6 +1,6 @@
 const width = 31;
 const height = 76;
-const area = width + height;
+const area = width * height;
 console.log('value of area:', area);
 console.log('typeof area:', typeof area);
 
@@ -32,6 +32,7 @@ const isSparta = headCount === 300;
 console.log('value of isSparta:', isSparta);
 console.log('typeof isSparta:', typeof isSparta);
 
-const motto = fullName + ' is the GOAT';
+let motto = fullName;
+motto += ' is the GOAT';
 console.log('value of motto:', motto);
 console.log('typeof motto:', typeof motto);
