@@ -4,7 +4,7 @@
 
 After completing this exercise, you should be able to discuss or answer the following questions:
 
-- Why do we log things to the console?: To check the output of our code.
+- Why do we log things to the console?: To check the output of our code for debugging and inspection.
 
 - What is a method?: A method is a function which is the property of an object
 
@@ -16,7 +16,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - How do you generate a random number?: Using the Math.random() method.
 
-- How do you delete an element from an array?: The shift method
+- How do you delete an element from an array?: The splice method
 
 - How do you append an element to an array?: The unshift method
 
@@ -24,10 +24,10 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - Do string methods change the original string? How would you check if you weren't sure?: No, they return a NEW string, you can log to the console to check!
 
-- Roughly how many string methods are there according to the MDN Web docs?: 120 (tentative)
+- Roughly how many string methods are there according to the MDN Web docs?: 52ish
 
-- Is the return value of a function or method useful in every situation?: No
+- Is the return value of a function or method useful in every situation?: No, sometimes we need to call a function without returning anything so the returned value isn't important
 
-- Roughly how many array methods are there according to the MDN Web docs?
+- Roughly how many array methods are there according to the MDN Web docs?: 45
 
 - What three-letter acronym should you always include in your Google search about a JavaScript method or CSS property?: MDN
