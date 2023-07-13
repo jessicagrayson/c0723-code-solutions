@@ -14,7 +14,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - _When_ does the **initialization** expression of a `for` loop get evaluated?: Before the execution of the first loop
 
-- _When_ does the **condition** expression of a `for` loop get evaluated?: Each time before the loop reuns
+- _When_ does the **condition** expression of a `for` loop get evaluated?: After each iteration.
 
 - _When_ does the **final** expression of a `for` loop get evaluated?: At the end of each loop iteration
 
