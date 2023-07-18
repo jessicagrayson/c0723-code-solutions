@@ -4,9 +4,9 @@
 
 After completing this exercise, you should be able to discuss or answer the following questions:
 
-- How do you indicate the relative link to a parent directory?: Using ../ notation
+- How do you indicate the relative link to a parent directory?: By referencing folder name/directory and then the desired file name.
 
-- How do you indicate the relative link to a child directory?: By specifying the path to the child directory (or file within the current directory)
+- How do you indicate the relative link to a child directory?: By specifying the path to the child directory (or file within the current directory): ../
 
 - How do you indicate the relative link to a grand parent directory?: Using ../ ../ notation
 
