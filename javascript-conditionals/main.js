@@ -12,8 +12,11 @@
 // isUnderFive(number)
 
 function isUnderFive(number) {
-  if (number < 5) return true;
-  else return false;
+  if (number < 5) {
+    return true;
+  } else {
+    return false;
+  }
 }
 console.log('Value of isUnderFive:', isUnderFive(5));
 
@@ -35,7 +38,7 @@ const thirdBeatle = 'George Harrison';
 const fourthBeatle = 'Ringo Starr';
 
 function startsWithJ(string) {
-  const firstChar = string['0'];
+  const firstChar = string[0];
   if (firstChar === 'J') return true;
   else return false;
 }
@@ -53,7 +56,7 @@ const person = {
 };
 
 function isOldEnoughToDrink(person) {
-  if (person.age > 21) return true;
+  if (person.age >= 21) return true;
   else return false;
 }
 
@@ -62,7 +65,7 @@ console.log('Value of isOldEnoughToDrink:', isOldEnoughToDrink(person));
 // isOldEnoughToDrive(person)
 
 function isOldEnoughToDrive(person) {
-  if (person.age > 16) return true;
+  if (person.age >= 16) return true;
   else return false;
 }
 
@@ -83,16 +86,17 @@ console.log(
 
 function categorizeAcidity(pH) {
   if (pH === 7) return 'neutral';
+  else if (pH < 0) return 'invalid pH level';
   else if (pH < 7) return 'acid';
   else if (pH <= 14) return 'base';
   else return 'invalid pH level';
 }
 
-console.log('Value of categorizeAcidity:', categorizeAcidity(9));
+console.log('Value of categorizeAcidity:', categorizeAcidity(6));
 
 // introduceWarnerBro(name)
 
-function introduceWarnerBro(name) {
+function introduceWarnerBro(name = 'Goodnight everbody!') {
   switch (name) {
     case 'yakko':
       return 'We are the warner bros!';
@@ -100,14 +104,12 @@ function introduceWarnerBro(name) {
       return 'We are the warner bros!';
     case 'dot':
       return 'I am cute~';
-    case 'cody':
-      return 'Goodnight everybody!';
-    case 'minerva':
+    default:
       return 'Goodnight everybody!';
   }
 }
 
-console.log('Value of introduceWarnerBro:', introduceWarnerBro('dot'));
+console.log('Value of introduceWarnerBro:', introduceWarnerBro('bill'));
 
 // recommendMovie(genre)
 
@@ -125,9 +127,9 @@ function recommendMovie(genre) {
       return 'Les Miserables';
     case 'sci-fi':
       return 'Deux Ex Machina';
-    case 'random':
-      return 'Genre not recognized. Choose between action, comedy, horror, drama, musical, or sci-fi';
+    default:
+      return 'Genre not recognized. Choose betwen action, comedy, horror, drama, music, or sci-fi';
   }
 }
 
-console.log('Value of recommendedMovie:', recommendMovie('drama'));
+console.log('Value of recommendedMovie:', recommendMovie('arthouse'));
