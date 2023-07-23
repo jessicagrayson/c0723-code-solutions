@@ -1,0 +1,74 @@
+.row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  background-color: white;
+  max-width: 1000px;
+  margin: 0 auto;
+  color: #444;
+  letter-spacing: 1px;
+  padding-top: 50px;
+  font-family: Karla, sans-serif;
+  line-height: 28px;
+
+  /* font-family: 'Courier New', Courier, monospace; */
+}
+
+h1 {
+  font-weight: bold;
+  font-size: 60px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: bolder;
+  margin-bottom: 5px;
+}
+
+.header-text {
+  font-size: 22px;
+  text-align: center;
+  line-height: 34px;
+}
+
+.column-half {
+  display: flex;
+  flex-basis: calc(100% / 2);
+  flex-direction: column;
+  gap: 2rem;
+
+  /* Flex direction changed to column to enable use of gap property to create white space between top and bottom halves of each column, these sections were divided into quadrants using the quadrant class. */
+}
+
+.learn-more {
+  background-color: #fff;
+  color: #d14c44;
+  border: solid 3px #d14c44;
+  width: 250px;
+  height: 50px;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-top: 50px;
+  font-weight: bold;
+}
+
+.quadrant {
+  display: flex;
+}
+
+.middle-row {
+  /* This class was createed to allow unique styling to be applied in structuring its two columns, while still maintaining the styles afforded to all other elements with the row class */
+  gap: 8rem;
+}
+
+img {
+  position: relative;
+  bottom: 60px;
+}
