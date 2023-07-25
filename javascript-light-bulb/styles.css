@@ -1,0 +1,40 @@
+/* Beginning of dark mode code */
+
+.dark-mode {
+  background-color: #111;
+}
+
+.circle-dark {
+  background-color: #252525;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: none;
+}
+
+/* Beginning of light mode code */
+
+.light-mode {
+  background-color: #fef9f1;
+}
+
+.circle-light {
+  background-color: #faea84;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 50px #ffe380;
+}
+
+.container {
+  display: flex;
+}
+
+.row {
+  display: flex;
+  width: 3000px;
+  height: 1000px;
+  margin: auto 0;
+  justify-content: center;
+  align-items: center;
+}
