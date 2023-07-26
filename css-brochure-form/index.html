@@ -19,43 +19,45 @@
   <body>
     <div class="container">
       <h2 class="learnMore">LEARN MORE</h2>
-      <label class="inputLabel" for="email">Company Email</label>
-      <div>
-        <input
-          class="input"
-          type="email"
-          id="email"
-          placeholder="sally@company.co" />
-      </div>
-      <label class="inputLabel" for="nameField">Name</label>
-      <div>
-        <input
-          class="input"
-          type="text"
-          id="nameField"
-          placeholder="Sally Smith" />
-      </div>
-      <label class="inputLabel" for="hiring">Where Are You Hiring?</label>
-      <div>
-        <input
-          class="input"
-          type="text"
-          id="hiring"
-          placeholder="City, Country" />
-      </div>
-      <label class="inputLabel" for="engineers"
-        >How Many Engineers Are You Hiring In The Next 6 Months?</label
-      >
-      <div>
-        <select class="engineers" name="engineers">
-          <option value="firstEngineers">1 - 2 Engineers</option>
-          <option value="secondEngineers">3 - 4 Engineers</option>
-          <option value="thirdEngineers">4 - 5 Engineers</option>
-          <option value="fourthEngineers">5+ Engineers</option>
-        </select>
-      </div>
+      <form>
+        <label class="inputLabel" for="email">Company Email</label>
+        <div>
+          <input
+            class="input"
+            type="email"
+            id="email"
+            placeholder="sally@company.co" />
+        </div>
+        <label class="inputLabel" for="nameField">Name</label>
+        <div>
+          <input
+            class="input"
+            type="text"
+            id="nameField"
+            placeholder="Sally Smith" />
+        </div>
+        <label class="inputLabel" for="hiring">Where Are You Hiring?</label>
+        <div>
+          <input
+            class="input"
+            type="text"
+            id="hiring"
+            placeholder="City, Country" />
+        </div>
+        <label class="inputLabel" for="engineers"
+          >How Many Engineers Are You Hiring In The Next 6 Months?</label
+        >
+        <div>
+          <select class="engineers" name="engineers" id="engineers">
+            <option value="firstEngineers">1 - 2 Engineers</option>
+            <option value="secondEngineers">3 - 4 Engineers</option>
+            <option value="thirdEngineers">4 - 5 Engineers</option>
+            <option value="fourthEngineers">5+ Engineers</option>
+          </select>
+        </div>
 
-      <button class="submit">Submit</button>
+        <button class="submit">Submit</button>
+      </form>
     </div>
   </body>
 </html>
