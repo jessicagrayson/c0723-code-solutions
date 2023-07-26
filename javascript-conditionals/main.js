@@ -96,7 +96,7 @@ console.log('Value of categorizeAcidity:', categorizeAcidity(6));
 
 // introduceWarnerBro(name)
 
-function introduceWarnerBro(name = 'Goodnight everbody!') {
+function introduceWarnerBro(name) {
   switch (name) {
     case 'yakko':
       return 'We are the warner bros!';
@@ -109,7 +109,7 @@ function introduceWarnerBro(name = 'Goodnight everbody!') {
   }
 }
 
-console.log('Value of introduceWarnerBro:', introduceWarnerBro('bill'));
+console.log('Value of introduceWarnerBro:', introduceWarnerBro());
 
 // recommendMovie(genre)
 
