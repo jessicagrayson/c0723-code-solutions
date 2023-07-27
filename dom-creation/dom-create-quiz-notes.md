@@ -14,7 +14,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - What is the `textContent` property of an element object for?: It is used to get or set the text content of an element.
 
-- Name two ways to set the `class` attribute of a DOM element.: setAttribute method or classList property
+- Name two ways to set the `class` attribute of a DOM element.: setAttribute method or className property
 
 - What are two advantages of defining a function to do create something (like the work of creating a DOM tree)?: Reusibility and modularity.
 
