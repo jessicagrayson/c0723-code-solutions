@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>CSS Challenge - Brochure Form</title>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;1,100;1,300;1,400;1,500&display=swap"
+      rel="stylesheet" />
+  </head>
+  <body>
+    <div class="container">
+      <h2 class="learnMore">LEARN MORE</h2>
+      <form>
+        <label class="inputLabel" for="email">Company Email</label>
+        <div>
+          <input
+            class="input"
+            type="email"
+            id="email"
+            placeholder="sally@company.co" />
+        </div>
+        <label class="inputLabel" for="nameField">Name</label>
+        <div>
+          <input
+            class="input"
+            type="text"
+            id="nameField"
+            placeholder="Sally Smith" />
+        </div>
+        <label class="inputLabel" for="hiring">Where Are You Hiring?</label>
+        <div>
+          <input
+            class="input"
+            type="text"
+            id="hiring"
+            placeholder="City, Country" />
+        </div>
+        <label class="inputLabel" for="engineers"
+          >How Many Engineers Are You Hiring In The Next 6 Months?</label
+        >
+        <div>
+          <select class="engineers" name="engineers" id="engineers">
+            <option value="firstEngineers">1 - 2 Engineers</option>
+            <option value="secondEngineers">3 - 4 Engineers</option>
+            <option value="thirdEngineers">4 - 5 Engineers</option>
+            <option value="fourthEngineers">5+ Engineers</option>
+          </select>
+        </div>
+
+        <button class="submit">Submit</button>
+      </form>
+    </div>
+  </body>
+</html>
