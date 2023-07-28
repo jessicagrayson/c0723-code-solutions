@@ -1,0 +1,73 @@
+/* Default styles */
+
+.open-btn {
+  width: 240px;
+  height: 58px;
+  background-color: #4a4ae9;
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 6px;
+  border-radius: 6px;
+  box-shadow: 3px 3px 3px #919292;
+}
+
+.pop-container {
+  display: none;
+}
+
+/* Clicked mode styles */
+
+.background-clicked {
+  background-color: #323232;
+}
+
+.pop-container-clicked {
+  display: flex;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.open-btn-clicked {
+  width: 240px;
+  height: 58px;
+  background-color: #110f2e;
+  color: #222231;
+  font-size: 32px;
+  font-family: 'Open Sans', sans-serif;
+  padding: 6px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* End dark mode styles, begin pop-up styles */
+
+.pop-up {
+  position: absolute;
+  left: 1000px;
+  top: 500px;
+  border-radius: 5px;
+  background-color: #fff;
+  width: 476px;
+  height: 200px;
+  padding: 50px;
+  box-shadow: 3px 3px 3px #fff;
+  display: flex; /* Used to position child elements within (h2, button, etc) below styles will be for that */
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  align-content: space-between;
+}
+
+.pop-header {
+  font-size: 29px;
+}
+
+.pop-btn {
+  background-color: #ea5b5c;
+  color: #fff;
+  box-shadow: 3px 3px 3px #919292;
+  width: 110px;
+  height: 56px;
+  border-radius: 5px;
+  font-size: 26px;
+}
