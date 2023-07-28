@@ -1,0 +1,25 @@
+button {
+  padding: 10px 26px;
+  font-size: 20px;
+  font-family: sans-serif;
+  background-color: white;
+  color: black;
+  border: solid 1px black;
+  font-weight: lighter;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.student:nth-child(odd) {
+  background-color: lightgray;
+}
+
+thead {
+  color: white;
+  font-weight: lighter;
+  background-color: black;
+}
