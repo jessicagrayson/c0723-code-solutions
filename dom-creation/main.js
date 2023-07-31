@@ -68,44 +68,48 @@ const pokedex = [
 
 // Start my code:
 
-function renderPokemon(pokemon) {
-  for (let i = 0; i < pokemon.length; i++) {
-    const currentPokemon = pokemon[i];
+// Function to create card
+function createPokemonCard(pokemon) {
+  const $columnThird = document.createElement('div');
+  $columnThird.className = 'column-third';
 
-    const $columnThird = document.createElement('div');
-    $columnThird.className = 'column-third';
+  const $pokemonCard = document.createElement('div');
+  $pokemonCard.className = 'pokemon-card';
 
-    const $pokemonCard = document.createElement('div');
-    $pokemonCard.className = 'pokemon-card';
+  const $image = document.createElement('img');
+  $image.setAttribute('src', pokemon.imageUrl);
 
-    const $image = document.createElement('img');
-    $image.setAttribute('src', currentPokemon.imageUrl);
+  const $pokemonCardText = document.createElement('div');
+  $pokemonCardText.className = 'pokemon-card-text';
 
-    const $pokemonCardText = document.createElement('div');
-    $pokemonCardText.className = 'pokemon-card-text';
+  const $pokemonName = document.createElement('h2');
+  $pokemonName.className = 'pokemon-name';
+  $pokemonName.textContent = pokemon.name;
 
-    const $pokemonName = document.createElement('h2');
-    $pokemonName.className = 'pokemon-name';
-    $pokemonName.textContent = currentPokemon.name;
+  const $pokemonNumber = document.createElement('h3');
+  $pokemonNumber.className = 'pokemon-number';
+  $pokemonNumber.textContent = pokemon.number;
 
-    const $pokemonNumber = document.createElement('h3');
-    $pokemonNumber.className = 'pokemon-number';
-    $pokemonNumber.textContent = currentPokemon.number;
+  const $pokemonDescription = document.createElement('p');
+  $pokemonDescription.className = 'pokemon-description';
+  $pokemonDescription.textContent = pokemon.description;
 
-    const $pokemonDescription = document.createElement('p');
-    $pokemonDescription.className = 'pokemon-description';
-    $pokemonDescription.textContent = currentPokemon.description;
+  $columnThird.appendChild($pokemonCard);
+  $pokemonCard.appendChild($image);
+  $pokemonCard.appendChild($pokemonCardText);
+  $pokemonCardText.appendChild($pokemonName);
+  $pokemonCardText.appendChild($pokemonNumber);
+  $pokemonCardText.appendChild($pokemonDescription);
 
-    $columnThird.appendChild($pokemonCard);
-    $pokemonCard.appendChild($image);
-    $pokemonCard.appendChild($pokemonCardText);
-    $pokemonCardText.appendChild($pokemonName);
-    $pokemonCardText.appendChild($pokemonNumber);
-    $pokemonCardText.appendChild($pokemonDescription);
-
-    const pokemonDeck = document.querySelector('.row');
-    pokemonDeck.appendChild($columnThird);
-  }
+  return $columnThird;
 }
 
-renderPokemon(pokedex);
+// DOM element where Pokemon cards will be appended
+const pokemonDeck = document.querySelector('.row');
+
+// Loop through the pokemon array then create/render Pokemon cards
+for (let i = 0; i < pokedex.length; i++) {
+  const currentPokemon = pokedex[i];
+  const $pokemonCard = createPokemonCard(currentPokemon);
+  pokemonDeck.appendChild($pokemonCard);
+}
