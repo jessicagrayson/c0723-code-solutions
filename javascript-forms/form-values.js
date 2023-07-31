@@ -12,5 +12,5 @@ function submitFunction(event) {
   };
 
   console.log($formData);
-  document.getElementById('contact-form').reset();
+  $contactForm.reset();
 }
