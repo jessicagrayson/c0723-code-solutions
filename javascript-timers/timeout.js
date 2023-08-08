@@ -1,5 +1,5 @@
 function changeHeading(string) {
-  document.querySelector('.message').innerHTML = string;
+  document.querySelector('.message').textContent = string;
 }
 
 setTimeout(changeHeading, 2000, 'hello there');
