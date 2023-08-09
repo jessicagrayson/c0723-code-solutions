@@ -1,7 +1,10 @@
 function ExampleConstructor() {}
 
-console.log('value of ExampleConstructor:', ExampleConstructor);
-console.log('type of ExampleConstructor:', typeof ExampleConstructor);
+console.log('value of protoype:', ExampleConstructor.prototype);
+console.log(
+  'type of ExampleConstructor.prototype:',
+  typeof ExampleConstructor.prototype
+);
 
 const constructorVariable = new ExampleConstructor();
 console.log('value of function variable:', constructorVariable);
