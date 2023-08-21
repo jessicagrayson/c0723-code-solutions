@@ -38,7 +38,7 @@ After completing this exercise, you should be able to discuss or answer the foll
 
   - How many arguments does the arrow function take?: One argument - 'y'
 
-  - What value does it return?: It just has a console log
+  - What value does it return?: It returns undefined.
 
   - How many arguments are passed to the function `bar`?: One
 
