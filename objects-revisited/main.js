@@ -40,6 +40,26 @@ function addWeekends(business) {
   });
 }
 
-console.log(addWeekends(business));
+addWeekends(business);
+console.log(business.employees.john.daysOfWeekWorking);
 
-// function makes API request, adds first 4 users to business, gives each a unique titkl
+// working with business object -
+
+// DOM queries
+const $xhr = new XMLHttpRequest();
+
+// adds employees
+function addEmployees() {
+  const results = [];
+  // handles API search request
+  $xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
+  $xhr.responseType = 'json';
+  $xhr.addEventListener('load', () => {
+    console.log($xhr.status);
+    results.push($xhr.response);
+    console.log(results);
+  });
+  $xhr.send();
+}
+
+addEmployees(business);
