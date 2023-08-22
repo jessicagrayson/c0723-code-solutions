@@ -31,7 +31,7 @@ function addWeekends(business) {
   // update business days to include weekends
   business.daysOpen.push('Sat', 'Sun');
 
-  // update employees work days to include weeks
+  // update employees work days to include weekends
   Object.values(business.employees).forEach((employee) => {
     employee.daysOfWeekWorking = employee.daysOfWeekWorking.concat(
       'Sat',
@@ -41,3 +41,5 @@ function addWeekends(business) {
 }
 
 console.log(addWeekends(business));
+
+// function makes API request, adds first 4 users to business, gives each a unique titkl
