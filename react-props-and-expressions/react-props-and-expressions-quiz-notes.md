@@ -8,9 +8,9 @@ After completing this exercise, you should be able to discuss or answer the foll
 
 - How do you declare and access props in a component?: You declare the property on the parent component similar to the way you would assign a parameter to a function, then its children can access it.
 
-- How do you pass props to a component?: See above.
+- How do you pass props to a component?: By declaring the prop inside of the parent component so that the child components can access it
 
-- How do you write JavaScript expressions in JSX?: By putting it inside curly braces.
+- How do you write JavaScript expressions in JSX?: By wrapping it inside curly braces.
 
 ## Notes
 
