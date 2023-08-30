@@ -45,21 +45,53 @@ console.log(business.employees.john.daysOfWeekWorking);
 
 // working with business object -
 
-// DOM queries
-const $xhr = new XMLHttpRequest();
-
-// adds employees
-function addEmployees() {
-  const results = [];
-  // handles API search request
-  $xhr.open('GET', 'https://jsonplaceholder.typicode.com/users');
-  $xhr.responseType = 'json';
-  $xhr.addEventListener('load', () => {
-    console.log($xhr.status);
-    results.push($xhr.response);
-    console.log(results);
-  });
-  $xhr.send();
+// checks if an employee works full time
+function checkIfFullTime(daysOfWeekWorking) {
+  return daysOfWeekWorking.length > 5;
 }
 
-addEmployees(business);
+// generates random workdays
+function getRandomWorkdays(daysOpen) {
+  const workdays = daysOpen.filter((day) => day !== 'Sat' && day !== 'Sun');
+  const selectedWorkdays = [];
+
+  for (let i = 0; i < Math.floor(Math.random() * 5) + 1; i++) {
+    const randomIndex = Math.floor(Math.random() * workdays.length);
+    selectedWorkdays.push(workdays[randomIndex]);
+    workdays.splice(randomIndex, 1);
+  }
+  return selectedWorkdays;
+}
+
+// adds employees from api search
+function addEmployees(business) {
+  // fetches data from api
+  fetch('https://jsonplaceholder.typicode.com/users')
+    // parses response as json
+    .then((response) => response.json())
+    // handles the parsed json data and gets first 4 users
+    .then((users) => {
+      const first4Users = users.slice(0, 4);
+      // loops through first four users
+      first4Users.forEach((user) => {
+        const employee = {
+          position: 'unique job title placeholder',
+          daysOfWeekWorking: getRandomWorkdays(business.daysOpen),
+          fullTime: checkIfFullTime(),
+        };
+        // adds new a new employee
+        business.employees[user.username] = employee;
+      });
+
+      // updates totalEmployees property
+      business.totalEmployees += first4Users.length;
+      // logs updated business object to console
+      console.log(business);
+    })
+    // handles errors if any and returns an error message
+    .catch((error) => {
+      console.error('Error fetching employees:', error);
+    });
+}
+
+console.log(addEmployees);
