@@ -1,0 +1,17 @@
+.container {
+  max-width: 40rem;
+  margin: 0 auto;
+  border: 0.2rem solid black;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.searchBar {
+  width: 16rem;
+  border-radius: 1rem;
+  padding: 0.2rem;
+}
+
+.list {
+  list-style: disc;
+}
