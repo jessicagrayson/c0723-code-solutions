@@ -1,0 +1,8 @@
+.square {
+  background-color: aqua;
+  color: palevioletred;
+  font-size: 2rem;
+  text-align: center;
+  height: 15rem;
+  width: 15rem;
+}
