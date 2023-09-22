@@ -1,97 +1,86 @@
-// creates business object with nested employee objects
-
+// Define business object
 const business = {
-  opens: '9 AM',
-  closes: '5 PM',
-  totalEmployees: 4,
-  daysOpen: ['M', 'T', 'W', 'Th'],
+  opens: '7AM',
+  closes: '8PM',
+  totalEmployees: 5,
+  daysOpen: ['Tu', 'W', 'Th', 'F'],
   employees: {
-    john: {
-      position: 'vocals/rhythm guitar',
-      daysOfWeekWorking: ['M', 'Th'],
+    marshall: {
+      position: 'software programmer',
+      daysOfWeekWorking: ['Tu', 'W', 'F'],
     },
-    paul: {
-      position: 'vocals/bass',
-      daysOfWeekWorking: ['M', 'T', 'W'],
+    aiden: {
+      position: 'full stack developer',
+      daysOfWeekWorking: ['M', 'W', 'F'],
     },
-    george: {
-      position: 'lead guitar/vocals',
-      daysOfWeekWorking: ['M', 'W'],
+    hannah: {
+      position: 'ceo',
+      daysOfWeekWorking: ['Tu', 'Th', 'F'],
     },
-    ringo: {
-      position: 'drums/vocals',
-      daysOfWeekWorking: ['M', 'W', 'Th'],
+    dennis: {
+      position: 'cfo',
+      daysOfWeekWorking: ['W', 'F'],
+    },
+    jessica: {
+      position: 'web developer',
+      daysOfWeekWorking: ['M', 'Tu', 'W', 'Th', 'F'],
     },
   },
 };
 
-// updates daysOpen for business and daysOfWeekWorking for each employee
-
-function addWeekends(business) {
-  // update business days to include weekends
+// Adds weekends to business days and employee schedules
+function addWeekends() {
   business.daysOpen.push('Sat', 'Sun');
-
-  // update employees work days to include weekends
-  Object.values(business.employees).forEach((employee) => {
-    employee.daysOfWeekWorking = employee.daysOfWeekWorking.concat(
-      'Sat',
-      'Sun'
-    );
-  });
-}
-
-addWeekends(business);
-console.log(business.employees.john.daysOfWeekWorking);
-
-// working with business object -
-
-// checks if an employee works full time
-function checkIfFullTime(daysOfWeekWorking) {
-  return daysOfWeekWorking.length > 5;
-}
-
-// generates random workdays
-function getRandomWorkdays(daysOpen) {
-  const workdays = daysOpen.filter((day) => day !== 'Sat' && day !== 'Sun');
-  const selectedWorkdays = [];
-
-  for (let i = 0; i < Math.floor(Math.random() * 5) + 1; i++) {
-    const randomIndex = Math.floor(Math.random() * workdays.length);
-    selectedWorkdays.push(workdays[randomIndex]);
-    workdays.splice(randomIndex, 1);
+  for (const key in business.employees) {
+    business.employees[key].daysOfWeekWorking.push('Sat', 'Sun');
   }
-  return selectedWorkdays;
 }
+addWeekends();
 
-// adds employees from api search
-function addEmployees(business) {
-  // fetches data from api
-  fetch('https://jsonplaceholder.typicode.com/users')
-    // parses response as json
-    .then((response) => response.json())
-    // handles the parsed json data and gets first 4 users
-    .then((users) => {
-      const first4Users = users.slice(0, 4);
-      // loops through first four users
-      first4Users.forEach((user) => {
-        const employee = {
-          position: 'unique job title placeholder',
-          daysOfWeekWorking: getRandomWorkdays(business.daysOpen),
-          fullTime: checkIfFullTime(),
-        };
-        // adds new a new employee
-        business.employees[user.username] = employee;
-      });
+// function addWeekends2() {
+//   business.daysOpen.push('Sat', 'Sun');
+//   Object.values(business.employees).forEach((e) => {
+//     e.daysOfWeekWorking.push('Sat', 'Sun');
+//   });
+// }
+// addWeekends2();
+// console.log(business);
 
-      // updates totalEmployees property
-      business.totalEmployees += first4Users.length;
-      // logs updated business object to console
-      console.log(business);
-    })
-    // handles errors if any and returns an error message
-    .catch((error) => {
-      console.error('Error fetching employees:', error);
-    });
+// API request
+async function fetchUsers() {
+  try {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users');
+    if (!response.ok) {
+      throw new Error('Network response was NOT okay');
+    }
+    const res = await response.json();
+    console.log(res);
+    return res;
+  } catch (err) {
+    console.error(err);
+  }
 }
+// Adds new employees to the business from the API request
+async function addEmployees() {
+  const users = await fetchUsers();
+  for (let i = 0; i < 4; i++) {
+    business.employees[users[i].name] = {
+      position: `job ${i}`,
+      daysOfWeekWorking: ['M', 'Tu', 'W'],
+    };
+    business.totalEmployees++;
+  }
+}
+addEmployees();
+console.log(business);
 
-console.log(addEmployees);
+// Deletes an employee
+function deleteEmployee(employeeName) {
+  if (business.employees[employeeName] === undefined) {
+    console.log('There is no employee with that name');
+    return;
+  }
+  business.totalEmployees--;
+  delete business.employees[employeeName];
+}
+deleteEmployee('dennis');
