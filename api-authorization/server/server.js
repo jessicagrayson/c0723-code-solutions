@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars -- Remove me! */
 import 'dotenv/config';
 import pg from 'pg';
 import argon2 from 'argon2';
